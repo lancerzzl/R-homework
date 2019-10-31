@@ -18,8 +18,6 @@ ggplot(animals, aes(x=Weight,y=Hight))+
 ggplot(animals, aes(x= Weight,y = Hight))+
   geom_point()+
   facet_grid(~Specise)
-#plot the picture with different specises.
-#weight and height are positively correlated in the same species
 
 ggplot(animals,aes(x = Specise,y = BMI))+
   geom_boxplot(fill = 'wheat',color = 'black')
