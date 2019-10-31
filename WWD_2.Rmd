@@ -1,0 +1,60 @@
+---
+title: "WWD assignment 2"
+author: "zhou ziliang"
+date: "2019/10/17"
+output:
+  html_document:
+    df_print: paged
+---
+# Course Work 2
+
+1. Load the file into RStudio
+
+```{r load file, message=FALSE, cache=TRUE}
+library(tidyverse)
+animals <- read.csv("Animals.csv")  
+```
+
+2. Rename (use the "rename" function) the "x" variable to "Weight", the "y" variable to "Height" and the"z" variable "Species"
+
+```{r Rename,cache=TRUE}
+animals <- rename(animals,Weight = "x",Height = "y", Specise = "z")
+```
+
+3. Rename the levels of "Species": a=Ostrich, b=Deer, c= Bear, d= Giant tortoise 
+
+```{r Rename specise,cache=TRUE}
+animals$Specise <- factor(animals$Specise, levels = c("a","b","c","d"),
+                          labels = c("Ostrich","Deer","Bear","Gaint tortise"))
+```
+
+4. Use "mutate" to create a new variable called BMI 
+
+```{r BMI, cache=TRUE}
+animals <- mutate(animals,BMI = animals$Weight/animals$Height^2) 
+```
+
+5. Create a scatter plot to explore the relationship between Height and Weight. 
+
+  answer: I cannot find obverse relationship between weight and hight
+```{r echo=TRUE}
+ggplot(animals, aes(x=Weight,y=Height))+
+  geom_point()
+```
+
+6. Create a scatter plot to explore the relationship between Height and Weight split by species 
+
+  answer: weight and height are positively correlated in the same species
+```{r echo=TRUE}
+ggplot(animals, aes(x= Weight,y = Height))+
+  geom_point()+
+  facet_grid(~Specise,)
+```
+
+7. Use an appropriate graph to explore the BMI of the different species types.
+
+
+```{r}
+ggplot(animals,aes(x = Specise,y = BMI))+
+  geom_boxplot(fill = 'wheat',color = 'black')
+```

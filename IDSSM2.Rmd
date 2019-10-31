@@ -1,0 +1,94 @@
+---
+title: "IDSSM 2"
+author: "zhou ziliang"
+date: "2019/10/23"
+output:
+  html_document:
+    df_print: paged
+---
+# 1. 
+![](D:/1.jpg)
+  
+  
+
+# 2.   
+  a.
+  
+```{r}
+E1 <- rexp(10000,rate = 2)
+hist(E1)
+```
+
+
+  b.
+```{r}
+E2 <- rexp(10000,rate = 3)
+hist(E2)
+```
+  
+  c.
+  
+```{r}
+y <- pmin(E1,E2)
+hist(y)
+```
+  d.
+  
+```{r}
+1/mean(y)
+```
+  
+  Answer: The sidtribution of the minimum is exponential distribution. 
+  
+  
+# 3.
+
+  a.
+  
+```{r}
+rand.gen <-function(N=10){
+  a <- 3
+  m <- 31
+  d <- 2 # seed
+  rn <-vector(length=N)# initialising the vector
+  for(i in 1:N){
+    d <- (a*d)%%m
+    rn[i] <- d/m
+  }
+  return(rn)
+}
+```
+  
+ b.
+
+```{r include=FALSE}
+rand.gen(N = 1000)
+```
+
+```{r}
+rand.gen2 <-function(N=10){
+  a <- 65539
+  m <- 2^13
+  d <- 2019 # seed
+  rn <-vector(length=N)# initialising the vector
+  for(i in 1:N){
+    d <- (a*d)%%m
+    rn[i] <- d/m
+  }
+  return(rn)
+}
+
+rn <- rand.gen2(N = 1000)
+```
+ 
+  c.
+
+```{r}
+rn <- 2*rn +3
+
+hist(rn)
+```
+
+  Answer: According to histogram, the distribution of the transformed variable is **Uniform Distribution**.
+
+  The parameters of this distribution is **a = 3, b = 5**
