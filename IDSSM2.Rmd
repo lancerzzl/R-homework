@@ -8,12 +8,13 @@ output:
 ---
 # 1. 
 ![](D:/1.jpg)
-  
+
   
 
-# 2.   
+# 2.
+
   a.
-  
+
 ```{r}
 E1 <- rexp(10000,rate = 2)
 hist(E1)
@@ -25,26 +26,26 @@ hist(E1)
 E2 <- rexp(10000,rate = 3)
 hist(E2)
 ```
-  
+
   c.
-  
+
 ```{r}
 y <- pmin(E1,E2)
 hist(y)
 ```
   d.
-  
+
 ```{r}
 1/mean(y)
 ```
-  
+
   Answer: The sidtribution of the minimum is exponential distribution. 
-  
-  
+
+
 # 3.
 
   a.
-  
+
 ```{r}
 rand.gen <-function(N=10){
   a <- 3
@@ -58,7 +59,7 @@ rand.gen <-function(N=10){
   return(rn)
 }
 ```
-  
+
  b.
 
 ```{r include=FALSE}
@@ -80,7 +81,7 @@ rand.gen2 <-function(N=10){
 
 rn <- rand.gen2(N = 1000)
 ```
- 
+
   c.
 
 ```{r}

@@ -1,7 +1,4 @@
 #question 1
-
-
-
 A <- matrix(c(1,1,1,1,2,3,0,-1,-3,4,1,2,1,2,-1,1),nrow = 4,byrow = T)
 B <- c(13,-1,10,1)
 solve(A,B)
@@ -9,7 +6,6 @@ solve(A,B)
 #x=2,y=0,z=6,w=5
 
 #question 2
-
 #a
 food <- read.csv("food.csv")
 Foodstuff <- food$Foodstuff
