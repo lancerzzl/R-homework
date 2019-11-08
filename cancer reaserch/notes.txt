@@ -1,0 +1,14 @@
+Notes:
+
+1. The histological groupings of ICD-O-3 morphology codes used in this release of CI5plus are defined in Chapter 4 of CI5 Vol. XI.
+2. The histological groupings of ICD-O-3 morphology codes used in the previous releases of CI5plus (2014, 2011) and in CI5 Annual Detailed DataSet (CI5ADDS, 2005) were defined in Chapter 4 of CI5 Vol. VIII.
+3. The *_Cases_MV.csv files contain histological groupings which include microscopically verified cases only (as in CI5 books).
+4. The *_Cases.csv files contain histological groupings which include all cases, irrespective of their basis of diagnostic (as in the previous releases of CI5plus).
+5. These CI5plus detailed databases contain updated annual incidence.
+
+Updates 
+
+1. 26 November 2018. 
+Following the agreement of the registry, the data from the Czech National Cancer registry have been included into the two CI5plus databases.
+
+
