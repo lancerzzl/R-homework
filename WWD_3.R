@@ -31,7 +31,7 @@
     M_inverse <- solve(M_matrix)
     a <- M_inverse %*% x
     b <- M_inverse %*% y
-    curvature <- 2*(a[3]*b[2]-a[2]*b[3])/sqrt(a[2]^2+b[2]^2)
+    curvature <- 2*(a[3]*b[2]-a[2]*b[3])/sqrt((a[2]^2+b[2]^2)^3)
     return(curvature)
   }
   max.curv <- function(x,y) {
