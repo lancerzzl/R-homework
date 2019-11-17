@@ -16,7 +16,7 @@ schoolboys <- read_xls('schoolboys.xls')
 schoolboys <- rename(schoolboys,
                      Age = "Age centered about 13 years",
                      Height = "Height (cm)",
-                     Season = "Season,months from start of year")
+                     Season = "Season, months from start of year")
 schoolboys$ID <- as.factor(schoolboys$ID)
 
 # question 2 --------------------------------------------------------------
@@ -48,7 +48,8 @@ ggplot(schboymerdiag, aes(x = Fitted, y = residuals, col = ID)) +
 
 plot_model(schoolboylmer1, type = "re")
 
-plot_model(schoolboylmer1, type = "eff", terms = "Age")
+plot_model(schoolboylmer1, type = "eff", terms = "Age")+
+  geom_point(aes(x=Age,y=Height),data = schoolboys)
 
 
 
