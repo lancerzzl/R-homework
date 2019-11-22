@@ -71,5 +71,16 @@ ggplot(England_data,aes(SMR_raw,SMR_smooth))+
 
 
 # Time changes ------------------------------------------------------------
+observe <- copd.observed[,2:11]
+changes <- summarise_all(observe,sum) %>%
+  t() %>% as.data.frame() %>%
+  rename(hospitalisation = 'V1')
+changes$years <- colnames(observe)
+changes$change <- c(0,diff(changes$hospitalisation))
+
+ggplot(changes,aes(x=years,y=change,group=1))+
+  geom_point(colour = 'slateblue4')+
+  geom_line(colour = 'springgreen')+
+  theme_bw()
 
 
