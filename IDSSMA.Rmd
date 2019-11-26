@@ -1,0 +1,37 @@
+---
+title: "IDSSMA"
+author: "zhou ziliang"
+date: "2019/11/20"
+output: pdf_document
+---
+![](d:/r workspace/R-homework/picture/p1.jpg)
+![](d:/r workspace/R-homework/picture/p2.jpg)
+```{r message=FALSE}
+library(tidyverse)
+titanic <- read.csv("titanic.csv")
+```
+
+```{r}
+titanic <- select(titanic, survived, gender, pclass)
+
+male <- filter(titanic, gender == "male")
+
+female <- filter(titanic, gender == "female")
+
+firstclass.male <- filter(male, pclass == 1)
+firstclass.female <- filter(female,pclass == 1)
+
+msur <- sum(male$survived)/length(male$survived);msur
+fsur <- sum(female$survived)/length(female$survived);fsur
+
+firstclass.msur <- sum(firstclass.male$survived)/length(firstclass.male$survived)
+firstclass.fsur <- sum(firstclass.female$survived)/length(firstclass.female$survived)
+firstclass.fsur
+firstclass.msur
+```
+
+**The male survived rate is 0.19,female survived rate is 0.73.**
+**In 1st class male survived rate is 0.34, female survived rate is 0.96**
+
+
+![](d:/r workspace/R-homework/picture/p3.jpg)
